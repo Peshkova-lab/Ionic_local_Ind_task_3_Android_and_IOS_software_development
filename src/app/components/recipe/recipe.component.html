@@ -1,0 +1,37 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Code of Recipe</ion-label>
+      <ion-input type="number" [(ngModel)] = "recipe.code"
+        name="code"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Patient</ion-label>
+      <ion-input type="text" [(ngModel)] = "recipe.patient"
+        name="patient"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Doctor</ion-label>
+      <ion-input type="text" [(ngModel)] = "recipe.doctor"
+        name="doctor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Birth</ion-label>
+      <ion-input type="text" [(ngModel)] = "recipe.birth"
+        name="birth"></ion-input>
+    </ion-item>
+    <ion-button *ngIf="isNew" color="primary" (click)="addNew()">
+      <ion-icon slot="start" name="add-circle"></ion-icon>
+    Add
+  </ion-button>
+  <ion-button
+    *ngIf="isNew" color="danger" class="ion-float-right" (click)="cancelAdding()">
+    <ion-icon slot="start" name="close"></ion-icon>
+    Break
+  </ion-button>
+  </ion-card-content>
+</ion-card>
